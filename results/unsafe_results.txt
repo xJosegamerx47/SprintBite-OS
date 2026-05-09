@@ -10,35 +10,35 @@
 [UNSAFE][Cook 5] order #1 | read inventory=72 | consumed=3 | now=69
 [UNSAFE][Cook 1] order #6 | read inventory=69 | consumed=4 | now=65
 [UNSAFE][Cook 2] order #6 | read inventory=69 | consumed=4 | now=65
-[UNSAFE][Cook 3] order #6 | read inventory=69 | consumed=4 | now=65
 [UNSAFE][Cook 4] order #6 | read inventory=69 | consumed=4 | now=65
+[UNSAFE][Cook 3] order #6 | read inventory=69 | consumed=4 | now=65
 [UNSAFE][Cook 5] order #6 | read inventory=69 | consumed=4 | now=65
 [UNSAFE][Cook 1] order #11 | read inventory=65 | consumed=5 | now=60
 [UNSAFE][Cook 2] order #11 | read inventory=65 | consumed=5 | now=60
+[UNSAFE][Cook 4] order #11 | read inventory=65 | consumed=5 | now=60
 [UNSAFE][Cook 3] order #11 | read inventory=65 | consumed=5 | now=60
 [UNSAFE][Cook 5] order #11 | read inventory=65 | consumed=5 | now=60
-[UNSAFE][Cook 4] order #11 | read inventory=65 | consumed=5 | now=60
 [UNSAFE][Cook 1] order #16 | read inventory=60 | consumed=2 | now=58
 [UNSAFE][Cook 2] order #16 | read inventory=60 | consumed=2 | now=58
+[UNSAFE][Cook 4] order #16 | read inventory=60 | consumed=2 | now=58
 [UNSAFE][Cook 3] order #16 | read inventory=60 | consumed=2 | now=58
 [UNSAFE][Cook 5] order #16 | read inventory=60 | consumed=2 | now=58
-[UNSAFE][Cook 4] order #17 | read inventory=60 | consumed=3 | now=57
-[UNSAFE][Cook 1] order #21 | read inventory=57 | consumed=3 | now=54
-[UNSAFE][Cook 2] order #21 | read inventory=57 | consumed=3 | now=54
-[UNSAFE][Cook 3] order #21 | read inventory=57 | consumed=3 | now=54
-[UNSAFE][Cook 4] order #22 | read inventory=57 | consumed=4 | now=53
-[UNSAFE][Cook 5] order #22 | read inventory=57 | consumed=4 | now=53
-[UNSAFE][Cook 2] order #26 | read inventory=53 | consumed=4 | now=49
-[UNSAFE][Cook 1] order #26 | read inventory=53 | consumed=4 | now=49
-[UNSAFE][Cook 3] order #26 | read inventory=53 | consumed=4 | now=49
-[UNSAFE][Cook 5] order #28 | read inventory=49 | consumed=2 | now=47
-[UNSAFE][Cook 4] order #28 | read inventory=49 | consumed=2 | now=47
+[UNSAFE][Cook 1] order #21 | read inventory=58 | consumed=3 | now=55
+[UNSAFE][Cook 2] order #21 | read inventory=58 | consumed=3 | now=55
+[UNSAFE][Cook 4] order #21 | read inventory=58 | consumed=3 | now=55
+[UNSAFE][Cook 5] order #21 | read inventory=58 | consumed=3 | now=55
+[UNSAFE][Cook 3] order #21 | read inventory=58 | consumed=3 | now=55
+[UNSAFE][Cook 1] order #26 | read inventory=55 | consumed=4 | now=51
+[UNSAFE][Cook 2] order #26 | read inventory=55 | consumed=4 | now=51
+[UNSAFE][Cook 5] order #26 | read inventory=55 | consumed=4 | now=51
+[UNSAFE][Cook 3] order #26 | read inventory=55 | consumed=4 | now=51
+[UNSAFE][Cook 4] order #26 | read inventory=55 | consumed=4 | now=51
 ----------------------------- SUMMARY -----------------------
 Requested orders:              30
 Processed orders reported:     30
 Final order counter:           31
 Race-condition indicators:     24
 Negative inventory events:     0
-Final inventory value:         47
+Final inventory value:         51
 Synchronization status:        INCONSISTENT
 -------------------------------------------------------------
