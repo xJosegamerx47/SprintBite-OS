@@ -16,36 +16,12 @@
 [SERVER][RESPONSE] Confirmation sent for order #2
 [SERVER][DISCONNECT] Client disconnected | active clients=0
 [SERVER][CONNECT] New client connected | active clients=1
-[SERVER][MESSAGE] Client sent: "Tacos al pastor"
-[SERVER][ORDER] Order #3 registered: Tacos al pastor
+[SERVER][MESSAGE] Client sent: "Orden premium: ramen"
+[SERVER][ORDER] Order #3 registered: Orden premium: ramen
 [SERVER][RESPONSE] Confirmation sent for order #3
 [SERVER][DISCONNECT] Client disconnected | active clients=0
 [SERVER][CONNECT] New client connected | active clients=1
-[SERVER][MESSAGE] Client sent: "Sushi roll"
-[SERVER][ORDER] Order #4 registered: Sushi roll
-[SERVER][RESPONSE] Confirmation sent for order #4
-[SERVER][DISCONNECT] Client disconnected | active clients=0
-[SERVER][CONNECT] New client connected | active clients=1
-[SERVER][MESSAGE] Client sent: "Orden premium: ramen"
-[SERVER][ORDER] Order #5 registered: Orden premium: ramen
-[SERVER][RESPONSE] Confirmation sent for order #5
-[SERVER][DISCONNECT] Client disconnected | active clients=0
-[SERVER][CONNECT] New client connected | active clients=1
 [SERVER][MESSAGE] Client sent: "Orden urgente: burrito"
-[SERVER][ORDER] Order #6 registered: Orden urgente: burrito
-[SERVER][RESPONSE] Confirmation sent for order #6
-[SERVER][DISCONNECT] Client disconnected | active clients=0
-[SERVER][CONNECT] New client connected | active clients=1
-[SERVER][MESSAGE] Client sent: "Combo familiar"
-[SERVER][ORDER] Order #7 registered: Combo familiar
-[SERVER][RESPONSE] Confirmation sent for order #7
-[SERVER][DISCONNECT] Client disconnected | active clients=0
-[SERVER][CONNECT] New client connected | active clients=1
-[SERVER][MESSAGE] Client sent: "Ensalada vegetariana"
-[SERVER][ORDER] Order #8 registered: Ensalada vegetariana
-[SERVER][RESPONSE] Confirmation sent for order #8
-[SERVER][DISCONNECT] Client disconnected | active clients=0
-[SERVER][CONNECT] New client connected | active clients=1
-[SERVER][MESSAGE] Client sent: "exit"
-[SERVER][SHUTDOWN] Shutdown requested by client.
+[SERVER][ORDER] Order #4 registered: Orden urgente: burrito
+[SERVER][RESPONSE] Confirmation sent for order #4
 [SERVER][DISCONNECT] Client disconnected | active clients=0

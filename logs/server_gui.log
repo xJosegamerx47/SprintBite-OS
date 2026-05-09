@@ -1,0 +1,66 @@
+============================================================
+ SprintBite OS - INTERACTIVE CLIENT/SERVER MODULE
+ TCP server listening on port 5000
+ Waiting for clients...
+ Send orders using: ./scripts/run_client.sh "Pizza"
+ Stop server using: ./scripts/run_client.sh "exit"
+============================================================
+[SERVER][CONNECT] New client connected | active clients=1
+[SERVER][CONNECT] New client connected | active clients=2
+[SERVER][WARNING] Client disconnected without sending data.
+[SERVER][DISCONNECT] Client disconnected | active clients=1
+[SERVER][WARNING] Client disconnected without sending data.
+[SERVER][DISCONNECT] Client disconnected | active clients=0
+[SERVER][CONNECT] New client connected | active clients=1
+[SERVER][WARNING] Client disconnected without sending data.
+[SERVER][DISCONNECT] Client disconnected | active clients=1
+[SERVER][CONNECT] New client connected | active clients=2
+[SERVER][WARNING] Client disconnected without sending data.
+[SERVER][DISCONNECT] Client disconnected | active clients=0
+[SERVER][CONNECT] New client connected | active clients=1
+[SERVER][WARNING] Client disconnected without sending data.
+[SERVER][DISCONNECT] Client disconnected | active clients=1
+[SERVER][CONNECT] New client connected | active clients=2
+[SERVER][WARNING] Client disconnected without sending data.
+[SERVER][DISCONNECT] Client disconnected | active clients=0
+[SERVER][CONNECT] New client connected | active clients=1
+[SERVER][MESSAGE] Client sent: "Pizza pepperoni"
+[SERVER][ORDER] Order #1 registered: Pizza pepperoni
+[SERVER][RESPONSE] Confirmation sent for order #1
+[SERVER][DISCONNECT] Client disconnected | active clients=1
+[SERVER][CONNECT] New client connected | active clients=2
+[SERVER][WARNING] Client disconnected without sending data.
+[SERVER][DISCONNECT] Client disconnected | active clients=0
+[SERVER][CONNECT] New client connected | active clients=1
+[SERVER][MESSAGE] Client sent: "Hamburguesa doble"
+[SERVER][ORDER] Order #2 registered: Hamburguesa doble
+[SERVER][RESPONSE] Confirmation sent for order #2
+[SERVER][DISCONNECT] Client disconnected | active clients=0
+[SERVER][CONNECT] New client connected | active clients=1
+[SERVER][WARNING] Client disconnected without sending data.
+[SERVER][DISCONNECT] Client disconnected | active clients=0
+[SERVER][CONNECT] New client connected | active clients=1
+[SERVER][MESSAGE] Client sent: "Tacos al pastor"
+[SERVER][ORDER] Order #3 registered: Tacos al pastor
+[SERVER][RESPONSE] Confirmation sent for order #3
+[SERVER][DISCONNECT] Client disconnected | active clients=1
+[SERVER][CONNECT] New client connected | active clients=2
+[SERVER][WARNING] Client disconnected without sending data.
+[SERVER][DISCONNECT] Client disconnected | active clients=0
+[SERVER][CONNECT] New client connected | active clients=1
+[SERVER][WARNING] Client disconnected without sending data.
+[SERVER][DISCONNECT] Client disconnected | active clients=1
+[SERVER][CONNECT] New client connected | active clients=2
+[SERVER][MESSAGE] Client sent: "exit"
+[SERVER][SHUTDOWN] Shutdown requested by client.
+[SERVER][DISCONNECT] Client disconnected | active clients=1
+[SERVER][CONNECT] New client connected | active clients=2
+[SERVER][WARNING] Client disconnected without sending data.
+[SERVER][DISCONNECT] Client disconnected | active clients=0
+----------------------------- SUMMARY -----------------------
+Total orders received:       3
+Active clients at shutdown:  0
+Communication model:         CLIENT-SERVER TCP SOCKETS
+Concurrency model:           ONE THREAD PER CLIENT
+Synchronization status:      SERVER STATS PROTECTED WITH MUTEX
+-------------------------------------------------------------

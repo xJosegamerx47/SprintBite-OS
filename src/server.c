@@ -30,20 +30,19 @@ void *handle_client(void *arg) {
     int current_active = active_clients;
     pthread_mutex_unlock(&stats_mutex);
 
-    printf("[SERVER][CONNECT] New client connected | active clients=%d\n", current_active);
-    fflush(stdout);
-
     int bytes_read = read(client_socket, buffer, BUFFER_SIZE - 1);
 
     if (bytes_read > 0) {
         buffer[bytes_read] = '\0';
 
+        printf("[SERVER][CONNECT] New client connected | active clients=%d\n", current_active);
         printf("[SERVER][MESSAGE] Client sent: \"%s\"\n", buffer);
         fflush(stdout);
 
         if (strncmp(buffer, "exit", 4) == 0) {
             const char *response = "[SERVER] Shutdown signal received.\n";
-            write(client_socket, response, strlen(response));
+            ssize_t sent = write(client_socket, response, strlen(response));
+            (void)sent;
 
             pthread_mutex_lock(&stats_mutex);
             server_running = 0;
@@ -65,23 +64,31 @@ void *handle_client(void *arg) {
                      "[SERVER] Order #%d accepted: %s\n",
                      order_number, buffer);
 
-            write(client_socket, response, strlen(response));
+            ssize_t sent = write(client_socket, response, strlen(response));
+            (void)sent;
 
             printf("[SERVER][RESPONSE] Confirmation sent for order #%d\n", order_number);
             fflush(stdout);
         }
-    } else {
-        printf("[SERVER][WARNING] Client disconnected without sending data.\n");
+
+        pthread_mutex_lock(&stats_mutex);
+        active_clients--;
+        current_active = active_clients;
+        pthread_mutex_unlock(&stats_mutex);
+
+        printf("[SERVER][DISCONNECT] Client disconnected | active clients=%d\n", current_active);
         fflush(stdout);
+    } else {
+        /*
+         * Silent health-check connection.
+         * The PHP GUI opens a TCP connection to verify if the server is alive,
+         * but it does not send an order. This is normal and should not appear
+         * as a warning in the server output.
+         */
+        pthread_mutex_lock(&stats_mutex);
+        active_clients--;
+        pthread_mutex_unlock(&stats_mutex);
     }
-
-    pthread_mutex_lock(&stats_mutex);
-    active_clients--;
-    current_active = active_clients;
-    pthread_mutex_unlock(&stats_mutex);
-
-    printf("[SERVER][DISCONNECT] Client disconnected | active clients=%d\n", current_active);
-    fflush(stdout);
 
     close(client_socket);
     return NULL;
