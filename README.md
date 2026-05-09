@@ -2,7 +2,7 @@
 
 SprintBite OS is a Linux-based Operating Systems project that simulates a concurrent food-order processing system inspired by delivery platforms.
 
-The project demonstrates concurrency problems and synchronization solutions using C, pthreads, mutexes, semaphores, producer-consumer queues, TCP sockets, and a PHP graphical interface.
+The project demonstrates concurrency problems and synchronization solutions using C, pthreads, mutexes, semaphores, producer-consumer queues, and TCP sockets.
 
 ## General idea
 
@@ -11,9 +11,9 @@ The system models a simplified delivery workflow:
 ```text
 Clients -> Order Queue -> Cooks -> Packing Area -> Ready Orders -> Couriers
 
-The project was extended with a client-server model:
+The project was also extended with a terminal-based client-server model:
 
-PHP GUI / TCP Client -> TCP Socket -> C Server
+TCP Client -> TCP Socket -> C Server
 Main modules
 1. Unsafe concurrency module
 
@@ -56,7 +56,7 @@ Files:
 src/server.c
 src/client.c
 
-This module implements a TCP server in C that receives orders from clients.
+This module implements a TCP server in C that receives food orders from terminal clients.
 
 The server:
 
@@ -90,48 +90,14 @@ File:
 
 scripts/run_live_clients.sh
 
-This script sends multiple orders automatically with pauses between each request. It is useful for demonstrating real-time client-server communication.
+This script sends multiple orders automatically with pauses between each request. It is useful for demonstrating real-time client-server communication from the terminal.
 
 Run with:
 
 ./scripts/run_live_clients.sh
-5. PHP graphical interface
-
-Files:
-
-gui/index.php
-scripts/run_php_gui.sh
-
-The PHP GUI acts as a visual client for the TCP server written in C.
-
-From the browser, the user can:
-
-check server status
-start the TCP server
-send orders
-use quick order buttons
-stop the server
-
-Run the PHP GUI:
-
-./scripts/run_php_gui.sh
-
-Open in browser:
-
-http://localhost:8080
-
-If port 8080 is busy, run manually with another port:
-
-php -S localhost:8081 -t gui
-
-Then open:
-
-http://localhost:8081
 Project structure
 SprintBite-OS/
 ├── bin/
-├── gui/
-│   └── index.php
 ├── logs/
 ├── results/
 ├── screenshots/
@@ -142,8 +108,7 @@ SprintBite-OS/
 │   ├── run_experiments.sh
 │   ├── run_server.sh
 │   ├── run_client.sh
-│   ├── run_live_clients.sh
-│   └── run_php_gui.sh
+│   └── run_live_clients.sh
 ├── src/
 │   ├── simulation_unsafe.c
 │   ├── simulation_safe.c
@@ -156,7 +121,7 @@ Dependencies
 Install the required packages in Linux or WSL:
 
 sudo apt update
-sudo apt install build-essential make gcc php-cli -y
+sudo apt install build-essential make gcc -y
 
 If you need to check occupied ports:
 
@@ -187,6 +152,8 @@ Generate the comparison table:
 cat tables/comparison.csv
 Client-server execution
 
+Use two WSL terminals.
+
 Terminal 1:
 
 cd /mnt/c/Users/Legion-Pro7/Documents/SprintBite-OS
@@ -213,56 +180,15 @@ cd /mnt/c/Users/Legion-Pro7/Documents/SprintBite-OS
 
 This sends several client requests automatically so the server output can be observed in real time.
 
-PHP GUI execution
-Option A: start the C server manually
-
-This option is recommended for demonstrations because every order sent from the PHP interface appears directly in the server terminal.
-
-Terminal 1:
-
-cd /mnt/c/Users/Legion-Pro7/Documents/SprintBite-OS
-./scripts/run_server.sh
-
-Terminal 2:
-
-cd /mnt/c/Users/Legion-Pro7/Documents/SprintBite-OS
-php -S localhost:8081 -t gui
-
-Browser:
-
-http://localhost:8081
-
-Do not press the "Encender servidor" button if the server is already running manually. Just send orders from the interface.
-
-Option B: start the server from the PHP interface
-cd /mnt/c/Users/Legion-Pro7/Documents/SprintBite-OS
-./scripts/run_php_gui.sh
-
-Browser:
-
-http://localhost:8080
-
-If the server is started from the PHP interface, its output is redirected to:
-
-logs/server_gui.log
 How to stop services
 
-Stop the TCP server manually:
+Stop the TCP server normally:
 
 ./scripts/run_client.sh "exit"
 
 Or kill the process using port 5000:
 
 sudo lsof -ti:5000 | xargs kill -9
-
-Stop the PHP server with:
-
-Ctrl + C
-
-Or kill the process using port 8080 or 8081:
-
-sudo lsof -ti:8080 | xargs kill -9
-sudo lsof -ti:8081 | xargs kill -9
 Evidence generated
 
 The project generates reproducible evidence in:
@@ -277,7 +203,6 @@ Important evidence files include:
 logs/unsafe.log
 logs/safe.log
 logs/server.log
-logs/server_gui.log
 results/unsafe_results.txt
 results/safe_results.txt
 results/server_results.txt
@@ -305,4 +230,5 @@ The safe module should generate, cook, and deliver all orders correctly with a c
 
 The TCP client-server module should show the server receiving and registering client orders in real time.
 
-The PHP GUI should allow visual interaction with the TCP server by sending orders from the browser.
+Repository
+https://github.com/xJosegamerx47/SprintBite-OS
