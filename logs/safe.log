@@ -1,0 +1,168 @@
+============================================================
+ SprintBite OS - SAFE module
+ Mutexes, semaphores and producer-consumer queues
+ Orders=30 | Clients=4 | Cooks=4 | Couriers=2 | Stoves=2 | Packing=1 | Inventory=110
+============================================================
+[CLIENT 1] generated order #1 requiring 3 ingredients
+[CLIENT 2] generated order #2 requiring 4 ingredients
+[CLIENT 3] generated order #3 requiring 5 ingredients
+[CLIENT 4] generated order #4 requiring 2 ingredients
+[COOK 1] started cooking order #1 | inventory=107
+[COOK 2] started cooking order #2 | inventory=103
+[CLIENT 3] generated order #5 requiring 3 ingredients
+[CLIENT 2] generated order #6 requiring 4 ingredients
+[CLIENT 1] generated order #7 requiring 5 ingredients
+[CLIENT 4] generated order #8 requiring 2 ingredients
+[CLIENT 3] generated order #9 requiring 3 ingredients
+[CLIENT 4] generated order #10 requiring 4 ingredients
+[CLIENT 2] generated order #11 requiring 5 ingredients
+[CLIENT 1] generated order #12 requiring 2 ingredients
+[COOK 3] started cooking order #3 | inventory=98
+[COOK 4] started cooking order #4 | inventory=96
+[CLIENT 3] generated order #13 requiring 3 ingredients
+[CLIENT 4] generated order #14 requiring 4 ingredients
+[CLIENT 2] generated order #15 requiring 5 ingredients
+[COOK 1] finished and packed order #1
+[CLIENT 1] generated order #16 requiring 2 ingredients
+[COURIER 1] picked order #1 for delivery
+[CLIENT 3] generated order #17 requiring 3 ingredients
+[CLIENT 4] generated order #18 requiring 4 ingredients
+[CLIENT 2] generated order #19 requiring 5 ingredients
+[CLIENT 1] generated order #20 requiring 2 ingredients
+[COOK 2] finished and packed order #2
+[COOK 1] started cooking order #5 | inventory=93
+[COOK 2] started cooking order #6 | inventory=89
+[COURIER 2] picked order #2 for delivery
+[COURIER 1] delivered order #1 successfully
+[CLIENT 3] generated order #21 requiring 3 ingredients
+[CLIENT 4] generated order #22 requiring 4 ingredients
+[CLIENT 2] generated order #23 requiring 5 ingredients
+[CLIENT 1] generated order #24 requiring 2 ingredients
+[COOK 4] finished and packed order #4
+[COURIER 1] picked order #4 for delivery
+[COURIER 2] delivered order #2 successfully
+[CLIENT 3] generated order #25 requiring 3 ingredients
+[CLIENT 4] generated order #26 requiring 4 ingredients
+[CLIENT 2] generated order #27 requiring 5 ingredients
+[CLIENT 1] generated order #28 requiring 2 ingredients
+[COOK 4] started cooking order #7 | inventory=84
+[COOK 3] finished and packed order #3
+[COOK 3] started cooking order #8 | inventory=82
+[COURIER 2] picked order #3 for delivery
+[COURIER 1] delivered order #4 successfully
+[CLIENT 3] generated order #29 requiring 3 ingredients
+[CLIENT 4] generated order #30 requiring 4 ingredients
+[COOK 2] finished and packed order #6
+[COURIER 1] picked order #6 for delivery
+[COURIER 2] delivered order #3 successfully
+[COOK 2] started cooking order #9 | inventory=79
+[COOK 1] finished and packed order #5
+[COOK 1] started cooking order #10 | inventory=75
+[COURIER 2] picked order #5 for delivery
+[COURIER 1] delivered order #6 successfully
+[COOK 4] finished and packed order #7
+[COURIER 1] picked order #7 for delivery
+[COURIER 2] delivered order #5 successfully
+[COOK 3] finished and packed order #8
+[COURIER 2] picked order #8 for delivery
+[COOK 4] started cooking order #11 | inventory=70
+[COOK 3] started cooking order #12 | inventory=68
+[COURIER 1] delivered order #7 successfully
+[COOK 1] finished and packed order #10
+[COURIER 1] picked order #10 for delivery
+[COURIER 2] delivered order #8 successfully
+[COOK 1] started cooking order #13 | inventory=65
+[COOK 2] finished and packed order #9
+[COOK 2] started cooking order #14 | inventory=61
+[COURIER 2] picked order #9 for delivery
+[COURIER 1] delivered order #10 successfully
+[COOK 4] finished and packed order #11
+[COURIER 1] picked order #11 for delivery
+[COURIER 2] delivered order #9 successfully
+[COOK 4] started cooking order #15 | inventory=56
+[COOK 3] finished and packed order #12
+[COOK 3] started cooking order #16 | inventory=54
+[COURIER 2] picked order #12 for delivery
+[COURIER 1] delivered order #11 successfully
+[COOK 1] finished and packed order #13
+[COURIER 1] picked order #13 for delivery
+[COURIER 2] delivered order #12 successfully
+[COOK 1] started cooking order #17 | inventory=51
+[COOK 2] finished and packed order #14
+[COOK 2] started cooking order #18 | inventory=47
+[COURIER 2] picked order #14 for delivery
+[COURIER 1] delivered order #13 successfully
+[COOK 4] finished and packed order #15
+[COURIER 1] picked order #15 for delivery
+[COURIER 2] delivered order #14 successfully
+[COOK 4] started cooking order #19 | inventory=42
+[COOK 3] finished and packed order #16
+[COOK 3] started cooking order #20 | inventory=40
+[COURIER 2] picked order #16 for delivery
+[COURIER 1] delivered order #15 successfully
+[COOK 1] finished and packed order #17
+[COURIER 1] picked order #17 for delivery
+[COURIER 2] delivered order #16 successfully
+[COOK 1] started cooking order #21 | inventory=37
+[COOK 2] finished and packed order #18
+[COOK 2] started cooking order #22 | inventory=33
+[COURIER 2] picked order #18 for delivery
+[COURIER 1] delivered order #17 successfully
+[COOK 3] finished and packed order #20
+[COURIER 1] picked order #20 for delivery
+[COURIER 2] delivered order #18 successfully
+[COOK 3] started cooking order #23 | inventory=28
+[COOK 4] finished and packed order #19
+[COOK 4] started cooking order #24 | inventory=26
+[COURIER 2] picked order #19 for delivery
+[COURIER 1] delivered order #20 successfully
+[COOK 1] finished and packed order #21
+[COURIER 1] picked order #21 for delivery
+[COURIER 2] delivered order #19 successfully
+[COOK 1] started cooking order #25 | inventory=23
+[COOK 2] finished and packed order #22
+[COOK 2] started cooking order #26 | inventory=19
+[COURIER 2] picked order #22 for delivery
+[COURIER 1] delivered order #21 successfully
+[COOK 3] finished and packed order #23
+[COURIER 1] picked order #23 for delivery
+[COURIER 2] delivered order #22 successfully
+[COOK 3] started cooking order #27 | inventory=14
+[COOK 4] finished and packed order #24
+[COOK 4] started cooking order #28 | inventory=12
+[COURIER 2] picked order #24 for delivery
+[COURIER 1] delivered order #23 successfully
+[COOK 1] finished and packed order #25
+[COURIER 1] picked order #25 for delivery
+[COURIER 2] delivered order #24 successfully
+[COOK 1] started cooking order #29 | inventory=9
+[COOK 2] finished and packed order #26
+[COOK 2] started cooking order #30 | inventory=5
+[COURIER 2] picked order #26 for delivery
+[COURIER 1] delivered order #25 successfully
+[COOK 3] finished and packed order #27
+[COOK 3] received stop signal
+[COURIER 1] picked order #27 for delivery
+[COURIER 2] delivered order #26 successfully
+[COOK 4] finished and packed order #28
+[COOK 4] received stop signal
+[COURIER 2] picked order #28 for delivery
+[COURIER 1] delivered order #27 successfully
+[COOK 1] finished and packed order #29
+[COOK 1] received stop signal
+[COURIER 1] picked order #29 for delivery
+[COURIER 2] delivered order #28 successfully
+[COOK 2] finished and packed order #30
+[COOK 2] received stop signal
+[COURIER 2] picked order #30 for delivery
+[COURIER 1] delivered order #29 successfully
+[COURIER 1] received stop signal
+[COURIER 2] delivered order #30 successfully
+[COURIER 2] received stop signal
+----------------------------- SUMMARY -----------------------
+Orders generated:            30
+Orders cooked:               30
+Orders delivered:            30
+Final inventory:             5
+Synchronization status:      CONSISTENT
+-------------------------------------------------------------

@@ -1,0 +1,8 @@
+metric,unsafe_module,safe_module
+orders_requested,30,30
+orders_processed_or_delivered,30,30
+orders_cooked,not_reliable,30
+race_condition_indicators,24,0
+negative_inventory_events,0,0
+final_inventory,47,5
+synchronization_status,INCONSISTENT,CONSISTENT
